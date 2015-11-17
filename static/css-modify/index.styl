@@ -1,0 +1,143 @@
+@import '../../bower_components/swiper/dist/css/swiper.min.css'
+@import '../../bower_components/normalize.css/normalize.css'
+
+.clearfix:after 
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+
+.clearfix   
+    display:inline-table
+    height:1%
+    display:block
+
+#loading 
+    background:url("/static/image/299.gif") no-repeat
+    background-color:rgba(0,0,0,0.8)
+    background-position:center
+    background-size:auto
+    position:absolute
+    width:100%
+    height:100%
+    z-index:100000
+
+
+@-webkit-keyframes ratote 
+    0% 
+        -webkit-transform:rotate(0deg)
+    
+    100% 
+        -webkit-transform:rotate(360deg)
+    
+@-webkit-keyframes up-animation 
+    0%,100% 
+        -webkit-transform:scale(1)
+        opacity:.9
+    
+    1%,99% 
+        -webkit-transform:translateY(0)
+    
+    49% 
+        -webkit-transform:translateY(-15px)
+    
+    50% 
+        opacity:0
+        -webkit-transform:scale(0.2)
+    
+animation(time,name,delay) 
+    -webkit-animation-duration:time
+    -webkit-animation-name:name
+    -webkit-backface-visibility: hidden
+    -webkit-animation-timing-function: ease
+    -webkit-animation-fill-mode: both
+    -webkit-animation-delay:delay
+* 
+    -webkit-user-select: none
+    -ms-user-select: none
+    -moz-user-select: none
+    -khtml-user-select: none
+    user-select: none
+    -webkit-touch-callout:none
+    -webkit-tap-highlight-color:transparent
+    -webkit-font-smoothing:antialiased
+
+set-background(image) 
+    height:100%
+    width:100%
+    position:relative
+    background-image:url('/static/image/'+image)
+    background-repeat:no-repeat
+    background-position:bottom center
+    background-size:100% 100%
+    z-index:1
+
+image-wauto(image) 
+    background-image:url('/static/image/'+image)
+    background-repeat:no-repeat
+    background-position:top center
+    background-size:100% auto
+
+image-hauto(image) 
+    background-image:url('/static/image/'+image)
+    background-repeat:no-repeat
+    background-position:top center
+    background-size:auto 100%
+
+image-fit(image) 
+    background-image:url('/static/image/'+image)
+    background-repeat:no-repeat
+    background-position:top center
+    background-size:100% 100%
+
+.up 
+    -webkit-animation-name:up-animation
+    -webkit-animation-duration: 1.5s!important
+    -webkit-animation-timing-function: ease
+    -webkit-animation-iteration-count:infinite
+    -webkit-animation-fill-mode:both
+    image-wauto('up.png')
+    height:0.08rem
+    width:0.06rem
+    position:absolute
+    bottom:0
+    z-index:5
+    left:0.47rem
+
+.music 
+    image-wauto('music.png')
+    width:0.08rem
+    height:0.08rem
+    z-index:5
+    top:0.1rem
+    position:absolute
+    left:0.03rem
+
+.music-play                                                                    
+    -webkit-animation-name:ratote
+    -webkit-backface-visibility: hidden
+    -webkit-animation-duration: 3s 
+    -webkit-animation-timing-function: linear
+    -webkit-animation-iteration-count:infinite
+    -webkit-animation-fill-mode: both
+
+.ng-cloak
+    display:none
+
+
+body 
+    width:100%
+    height:100%
+    position:absolute
+    font-size: 14px
+    color: #333 
+    font-family: '微软雅黑'
+    background-color: #fff
+    letter-spacing: 1px
+    margin:0 auto
+    box-shadow: 0 0 160px 0 #5C99E7
+    -webkit-user-select: none
+    background-size:cover
+    box-sizing:border-box
