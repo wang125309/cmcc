@@ -30675,8 +30675,9 @@ require("../js/share.min.js");
 indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($scope){
     if(localStorage['set']) {
         $.get("/backend/getUserBySet/?set="+localStorage['set'],function(data){
+            date = new Date();
             if(data.error_no == '0') {
-                if(data.data.date == localStorage['date']) {
+                if(data.data.date == localStorage['date'] && localStorage['date'] == (date.getDay() + date.getDate())) {
                     $scope.page1Show = false;
                     $scope.page2Show = false;
                     $scope.page3Show = false;
@@ -30688,6 +30689,9 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
                     else {
                         $scope.less200 = false;
                     }
+                }
+                else {
+                    $scope.page1Show = true;
                 }
             }
             else {
