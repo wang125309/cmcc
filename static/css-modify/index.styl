@@ -65,9 +65,8 @@ animation(time,name,delay)
     -webkit-font-smoothing:antialiased
 
 set-background(image) 
-    height:100%
     width:100%
-    position:relative
+    position:absolute
     background-image:url('/static/image/'+image)
     background-repeat:no-repeat
     background-position:bottom center
@@ -126,10 +125,24 @@ image-fit(image)
 .ng-cloak
     display:none
 
-
+@-webkit-keyframes shake
+    0%
+        -webkit-transform:rotote(0deg)
+    10%
+        -webkit-transform:rotate(-7.5deg)
+    20%
+        -webkit-transform:rotate(7.5deg)
+    30%
+        -webkit-transform:rotate(-7.5deg)
+    40%
+        -webkit-transform:rotate(7.5deg)
+    50%
+        -webkit-transform:rotate(0deg)
+    100%
+        -webkit-transform:rotate(0deg)
 body 
     width:100%
-    height:100%
+    min-height:100%
     position:absolute
     font-size: 14px
     color: #333 
@@ -141,3 +154,178 @@ body
     -webkit-user-select: none
     background-size:cover
     box-sizing:border-box
+
+    .page1
+        height:100%
+        set-background('background1.jpg')
+        position:absolute
+        .title
+            position:absolute
+            top:0
+            height:70%
+            width:100%
+            image-wauto('title1.png')
+            background-size:100% 100%
+        .subtitle
+            position:absolute
+            top:70%
+            image-wauto('subtitle1.png')
+            animation(1s,'shake',0s)
+            z-index:2
+            position:absolute
+            width:100%
+            height:11%
+            background-size:auto 100%
+            -webkit-animation-iteration-count:infinite
+        .button
+            image-wauto('enter.png')
+            height:0.1rem
+            width:0.3rem
+            left:0.35rem
+            position:absolute
+            top:85%
+    .page2
+        position:absolute
+        width:100%
+        text-align:center
+        set-background('background1.jpg')
+        min-height:100%
+        > .title
+            height:0.48rem
+            width:100%
+            image-wauto('title2.png')
+        > .form-background
+            position:relative
+            text-align:left
+            background-color:rgba(255,255,255,0.3)
+            color:#fff
+            border-radius:0.02rem
+            margin:0.06rem
+            margin-top:0
+            padding:0.04rem
+            font-size:0.04rem
+            .border
+                position:absolute
+                top:0
+                left:0
+                width:100%
+                height:100%
+                z-index:100
+                border:2px solid rgba(255,255,255,0.3)
+                -webkit-transform:rotate(-5deg)
+            .title
+                height:0.08rem
+                line-height:0.08rem
+            .desc
+                height:0.09rem
+                line-height:0.09rem
+                position:relative
+                z-index:1001
+                input
+                    width:100%
+                    border:1px solid #be7cc5
+                    border-radius:5px
+                    height:0.08rem
+                    line-height:0.08rem
+                    -webkit-user-select:initial
+                    color:#333
+        .submit
+            background-color:red
+            color:yellow
+            width:0.35rem
+            height:0.08rem
+            border:none
+            margin-bottom:0.1rem
+    .page3
+        position:absolute
+        width:100%
+        text-align:center
+        set-background('background1.jpg')
+        min-height:100%
+        > .title
+            height:0.96rem
+            width:100%
+            image-wauto('title1.png')
+        > .form-background
+            position:relative
+            text-align:center
+            background-color:rgba(255,255,255,0.3)
+            color:#fff
+            border-radius:0.02rem
+            margin:0.06rem
+            margin-top:0
+            padding:0.04rem
+            font-size:0.04rem
+            .border
+                position:absolute
+                top:0
+                left:0
+                width:100%
+                height:100%
+                z-index:100
+                border:2px solid rgba(255,255,255,0.3)
+                -webkit-transform:rotate(-5deg)
+            .line
+                p
+                    margin:0
+                position:relative
+                z-index:1001
+                .title
+                    display:inline-block
+                    width:30%
+                    height:0.11rem
+                    line-height:0.11rem
+                .desc
+                    display:inline-block
+                    width:70%
+                    height:0.11rem
+                    line-height:0.11rem
+                    > input
+                        width:100%
+                        height:0.07rem
+                        color:#333
+                        line-height:0.07rem
+        .thanks
+            color:yellow
+        .submit
+            background-color:red
+            color:yellow
+            width:0.35rem
+            height:0.08rem
+            border:none
+            margin-bottom:0.1rem
+    .page4
+        position:absolute
+        width:100%
+        text-align:center
+        set-background('background1.jpg')
+        min-height:100%
+        > .title
+            height:0.96rem
+            width:100%
+            image-wauto('title1.png')
+        > .form-background
+            text-align:left
+            background-color:rgba(255,255,255,0.3)
+            color:#fff
+            border-radius:0.02rem
+            margin:0.06rem
+            margin-top:0
+            padding:0.02rem
+            font-size:0.04rem
+            position:relative
+            .border
+                position:absolute
+                top:0
+                left:0
+                width:100%
+                height:100%
+                z-index:100
+                border:2px solid rgba(255,255,255,0.3)
+                -webkit-transform:rotate(-5deg)
+            p
+                margin:0.02rem 0 
+                text-align:center
+                span
+                    color:yellow
+                    font-size:0.05rem

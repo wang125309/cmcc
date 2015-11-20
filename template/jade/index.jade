@@ -13,6 +13,73 @@ include ./lib/header.jade
         })();
     body(ng-app="app",ng-controller="indexCtrl",ng-cloak)
         div.share=""
-        section(class="page page1")
-        section(class="page page2")
+        section(class="page page1",ng-show="page1Show==true")
+            div.title=""
+            div.subtitle=""
+            div.button(ng-click="enter()")=""
+        section(class="page page2",ng-show="page2Show==true")
+            div.title=""
+            div.form-background
+                div.border=""
+                div.line
+                    div.title 为“车联网”品牌起名字：
+                    div.desc
+                        input(type="text",ng-model="info.title1")
+                div.line
+                    div.title 简单描述一下为什么起这个名字：
+                    div.desc
+                        input(type="text",ng-model="info.reason1")
+                div.line
+                    div.title 为“4G机车”起名字
+                    div.desc
+                        input(type="text",ng-model="info.title2")
+                div.line
+                    div.title 简单描述一下为什么起这个名字：
+                    div.desc
+                        input(type="text",ng-model="info.reason2")
+                div.line
+                    div.title 为“OBD盒子”起名字：
+                    div.desc
+                        input(type="text",ng-model="info.title3")
+                div.line
+                    div.title 简单描述一下为什么起这个名字：
+                    div.desc
+                        input(type="text",ng-model="info.reason3")
+            button.submit(type="button",ng-click="submitInfo()") 提交
+        section(class="page page3",ng-show="page3Show==true")
+
+            div.title=""
+            div.form-background
+                div.border=""
+                div.line
+                    p 填写您的个人信息
+                    p 方便我们之后与您进行联系
+                div.line
+                    div.title 真实姓名：
+                    div.desc
+                        input(type="text",ng-model="user.name")
+                div.line
+                    div.title 联系电话：
+                    div.desc
+                        input(type="text",ng-model="user.mobile")
+            p.thanks 感谢您的参与！
+            button.submit(type="button",ng-click="submit()") 保存
+        section(class="page page4",ng-show="page4Show==true")
+            div.title=""
+            div.form-background(ng-show="less200==true")
+                div.border=""
+                p 您是今天第
+                    span {{ count }}
+                    | 位活动参与者
+                p 您已经成功参与征名活动
+                p 请随时关注“中国移动车联网”微信公众号，
+                p 也许您的“名字”真的会被我们选中 哦！
+            div.form-background(ng-show="less200==false")
+                div.border=""
+                p 您是今天第
+                    span {{ count }}
+                    | 位活动参与者
+                p 恭喜您获得500M流量！
+                p 稍后我们的客服会与您联系哦！
+
     script(language="javascript",src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
