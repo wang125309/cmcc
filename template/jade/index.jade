@@ -66,7 +66,7 @@ include ./lib/header.jade
             button.submit(type="button",ng-click="submit()") 保存
         section(class="page page4",ng-show="page4Show==true")
             div.title=""
-            div.form-background(ng-show="less200==true")
+            div.form-background(ng-show="less200==false")
                 div.border=""
                 p 您是今天第
                     span {{ count }}
@@ -74,7 +74,7 @@ include ./lib/header.jade
                 p 您已经成功参与征名活动
                 p 请随时关注“中国移动车联网”微信公众号，
                 p 也许您的“名字”真的会被我们选中 哦！
-            div.form-background(ng-show="less200==false")
+            div.form-background(ng-show="less200==true")
                 div.border=""
                 p 您是今天第
                     span {{ count }}
