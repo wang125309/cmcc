@@ -9,7 +9,7 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
         $.get("/backend/getUserBySet/?set="+localStorage['set'],function(data){
             date = new Date();
             if(data.error_no == '0') {
-                if(data.data.date == localStorage['date'] && localStorage['date'] == (date.getDay() + date.getDate())) {
+                if(data.data.date == localStorage['date'] && localStorage['date'] == (date.getMonth() + '-' + date.getDate())) {
                     $scope.page1Show = false;
                     $scope.page2Show = false;
                     $scope.page3Show = false;
@@ -40,9 +40,17 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
         $scope.page2Show = true;
     };
     var checked = false;
+    $scope.info = {
+        title1 : '',
+        title2 : '',
+        title3 : '',
+        reason1 : '',
+        reason2 : '',
+        reason3 : '',
+    };
     $scope.submitInfo = function() {
         date = new Date();
-        if(localStorage['date'] != date.getDay() + date.getDate()) {
+        if(localStorage['date'] != date.getMonth() + '-' + date.getDate()) {
             var checkCallBack = function(data) {
                 if(data.error_no == '0') {
                     $scope.page2Show = false;
@@ -95,7 +103,7 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
             $scope.page2Show = false;
             $scope.page3Show = true;
             checked = true;
-            localStorage['date'] = date.getDay() + date.getDate();
+            localStorage['date'] = date.getMonth() + '-' + date.getDate();
             localStorage['set'] = Date.parse(new Date()) + Math.random() * 1000;
             $.post('/backend/save/',{
                 "title1":$scope.info.title1,
