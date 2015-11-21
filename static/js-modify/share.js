@@ -7,7 +7,7 @@ $(function(){
             shareJson = {
                 link:"http://cmcc.qingdianer.com",
                 imgUrl:"http://cmcc.qingdianer.com/static/image/share-image.jpg",
-                title:'“一字千金”中国移动征名活动来啦~',
+                title: "中国移动车联网征名活动报名",
                 desc:'“一字千金”中国移动征名活动来啦~'
 
             };
