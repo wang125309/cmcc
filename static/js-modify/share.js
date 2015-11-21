@@ -5,10 +5,10 @@ $(function(){
 		wx.config(data);
         var share = function() {
             shareJson = {
-                link:"http://fordact.qingdianer.com",
-                imgUrl:"http://fordact.qingdianer.com/static/image/share-image.jpg",
-                title:"长安福特2015广州车展",
-                desc:"长安福特2015广州车展"
+                link:"http://cmcc.qingdianer.com",
+                imgUrl:"http://cmcc.qingdianer.com/static/image/share-image.jpg",
+                title:'“一字千金”中国移动征名活动来啦~',
+                desc:'“一字千金”中国移动征名活动来啦~'
 
             };
 			wx.onMenuShareTimeline(shareJson);
