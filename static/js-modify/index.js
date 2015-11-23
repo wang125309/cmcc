@@ -15,7 +15,7 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
                     $scope.page3Show = false;
                     $scope.page4Show = true;
                     $scope.count = data.data.count;
-                    if(data.data.count < 200) {
+                    if(data.data.count <= 200) {
                         $scope.less200 = true;
                     }
                     else {
@@ -122,7 +122,7 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
                     $scope.page3Show = false;
                     $scope.page4Show = true;
                     $scope.count = data.data.count;
-                    if(data.data.count < 200) {
+                    if(data.data.count <= 200) {
                         $scope.less200 = true;
                     }
                     else {
