@@ -30673,6 +30673,7 @@ require("../../bower_components/angular/angular.js");
 require("../js/share.min.js");
 
 indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($scope){
+    alert('“一字千金”征名阶段已结束');
     if(localStorage['set']) {
         $.get("/backend/getUserBySet/?set="+localStorage['set'],function(data){
             date = new Date();
@@ -30717,6 +30718,7 @@ indexCtrl = angular.module('app',[]).controller('indexCtrl',['$scope',function($
         reason3 : '',
     };
     $scope.submitInfo = function() {
+        alert('“一字千金”征名阶段已结束');
         date = new Date();
         if(localStorage['date'] != date.getMonth() + '-' + date.getDate()) {
             var checkCallBack = function(data) {
